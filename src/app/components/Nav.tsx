@@ -33,7 +33,7 @@ const Nav = () => {
           About
         </Link>
         <Link
-          href="/products"
+          href="/product"
           className="text-black hover:text-pink-500 transition"
         >
           Products
