@@ -29,7 +29,7 @@ const Page = ({ params }: PageProps) => {
       setProduct(finalData);
     };
     getData();
-  }, [params.id]);  
+  }, [params.id]);
 
   const addToCart = () => {
     if (typeof window !== "undefined") {
@@ -85,6 +85,15 @@ const Page = ({ params }: PageProps) => {
 };
 
 export default Page;
+
+export async function getServerSideProps(context: any) {
+  return {
+    props: {
+      params: context.params,
+    },
+  };
+}
+
 
 
 
