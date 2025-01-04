@@ -12,8 +12,14 @@ interface Product {
   img: string;
 }
 
-const Page = ({ params }: { params: { id: string } }) => {
-  const [product, setProduct] = useState<Product>();
+interface PageProps {
+  params: {
+    id: string;
+  };
+}
+
+const Page = ({ params }: PageProps) => {
+  const [product, setProduct] = useState<Product | null>(null);
   const router = useRouter(); 
 
   useEffect(() => {
@@ -23,7 +29,7 @@ const Page = ({ params }: { params: { id: string } }) => {
       setProduct(finalData);
     };
     getData();
-  }, []);
+  }, [params.id]);  
 
   const addToCart = () => {
     if (typeof window !== "undefined") {
@@ -33,13 +39,14 @@ const Page = ({ params }: { params: { id: string } }) => {
         data = "[]";
       }
       const cartArray = JSON.parse(data);
-      const myProducts: Product = product!;
-      cartArray.push(myProducts);
-      localStorage.setItem("cartData", JSON.stringify(cartArray));
+      if (product) {
+        cartArray.push(product);
+        localStorage.setItem("cartData", JSON.stringify(cartArray));
 
-      console.log("Cart Updated:", cartArray); 
+        console.log("Cart Updated:", cartArray); 
 
-      router.push("/cart");
+        router.push("/cart");
+      }
     }
   };
 
@@ -78,6 +85,7 @@ const Page = ({ params }: { params: { id: string } }) => {
 };
 
 export default Page;
+
 
 
 
