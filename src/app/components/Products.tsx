@@ -3,6 +3,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Link from "next/link"; 
+import Image from "next/image";
 
 interface Product {
   id: number;
@@ -39,9 +40,11 @@ const Products = () => {
             className="border p-4 rounded-lg shadow-sm w-72 h-[400px] mx-auto flex flex-col items-center relative  transition-transform hover:scale-105 border-pink-600"
           >
             <div className="relative w-full h-56 bg-slate-300">
-              <img
+              <Image
                 src={product.img}
                 alt={product.name}
+                width={1000}
+                height={1000}
                 className="w-full h-full object-cover rounded-md"
               />
             </div>

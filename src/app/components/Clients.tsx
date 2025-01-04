@@ -32,7 +32,7 @@ const Clients = () => {
       <div className="flex flex-wrap justify-center gap-6">
         {testimonials.map((testimonial, index) => (
           <div key={index} className="border p-6 rounded-lg shadow-lg max-w-xs w-full sm:w-auto">
-            <p className="mb-4">"{testimonial.comment}"</p>
+            <p className="mb-4">&quot;{testimonial.comment}&quot;</p>
             <div className="flex justify-center items-center">
               <div className="w-28 h-28 rounded-full overflow-hidden">
                 <Image src={testimonial.image} alt={testimonial.name} width={1000} height={1000} className="w-full h-full object-cover" />
