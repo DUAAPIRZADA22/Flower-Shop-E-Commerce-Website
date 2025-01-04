@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const Collections = () => {
@@ -33,9 +34,11 @@ const Collections = () => {
 
       <div className="flex flex-col md:flex-row justify-center mt-8 px-6">
         <div className="w-full md:w-1/2 h-[450px] bg-gray-300 mb-6 md:mb-0">
-          <img
+          <Image
             src="/images/f1.jpg"
             alt="Collection"
+            width={1000}
+            height={1000}
             className="w-full h-full object-cover"
           />
         </div>

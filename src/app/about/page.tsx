@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const page = () => {
@@ -6,11 +7,11 @@ const page = () => {
       <div className="flex flex-col md:flex-row items-center gap-6">
         <div className="md:w-1/2">
           <blockquote className="text-xl italic font-semibold leading-relaxed">
-            "Flowers are not just a display of beauty; they are a silent
+          &quot;Flowers are not just a display of beauty; they are a silent
             language of emotions. Each bloom speaks a different story, carrying
             whispers of love, friendship, and joy. They connect us to nature,
             bring peace to our hearts, and remind us of life&apos;s fleeting,
-            delicate moments."
+            delicate moments.&quot;
           </blockquote>
           <hr className="border-gray-400 w-1/4 mt-2" />
           <p className="text-sm text-gray-600 mt-2">- Edwin Curran</p>
@@ -18,8 +19,10 @@ const page = () => {
   
                <div className="md:w-1/2">
           <a href="#">
-            <img
+            <Image
               src="/images/abt.jpeg"
+              width={1000}
+              height={1000}
               alt="Flower Image"
               className="rounded-lg shadow-lg transition-transform transform hover:scale-105"
             />

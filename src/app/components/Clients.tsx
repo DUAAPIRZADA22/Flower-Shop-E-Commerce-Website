@@ -28,7 +28,7 @@ const Clients = () => {
       <h2 className="text-2xl text-gray-500 py-4">Testimonial</h2>
       <h1 className="text-6xl font-bold mb-6 font-dancing">What Clients Say</h1>
 
-      {/* Flexbox with wrap for responsiveness */}
+    
       <div className="flex flex-wrap justify-center gap-6">
         {testimonials.map((testimonial, index) => (
           <div key={index} className="border p-6 rounded-lg shadow-lg max-w-xs w-full sm:w-auto">

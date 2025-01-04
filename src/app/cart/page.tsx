@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 interface Product {
@@ -44,13 +45,15 @@ const Cart = () => {
             key={index}
             className="flex flex-col items-center border p-4 rounded-md mb-4 shadow-md"
           >
-            <img
+            <Image
               src={item.img}
+              width={1000}
+              height={1000}
               alt={item.name}
               className="w-1/3 sm:w-1/5 rounded-md"
             />
             <div className="text-center mt-4">
-              <h2 className="text-lg font-bold">{item.name}</h2>
+              <h2 className="text-2xl font-dancing font-bold">{item.name}</h2>
               <p>{item.description}</p>
               <p className="font-semibold">Price: {item.price}</p>
             </div>

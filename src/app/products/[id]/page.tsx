@@ -2,6 +2,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation"; 
+import Image from "next/image";
 
 interface Product {
   id: number;
@@ -45,9 +46,11 @@ const Page = ({ params }: { params: { id: string } }) => {
   if (product)
     return (
       <div className="flex flex-col items-center p-4 max-w-screen-lg mx-auto">
-        <img
+        <Image
           src={product.img}
           alt={product.name}
+          width={1000}
+          height={1000}
           className="w-full sm:w-3/5 md:w-2/5 lg:w-1/5 mb-6 rounded-md border border-red-950"
         />
         <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-6 text-center font-dancing underline underline-offset-4">

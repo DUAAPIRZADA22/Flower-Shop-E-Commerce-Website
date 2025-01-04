@@ -2,7 +2,6 @@
 "use client";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { FaLink, FaHeart, FaEye } from "react-icons/fa";
 import Link from "next/link"; 
 
 interface Product {
