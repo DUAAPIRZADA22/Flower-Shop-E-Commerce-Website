@@ -54,6 +54,7 @@ const Nav = () => {
           <RiAccountCircleLine className="text-2xl text-black cursor-pointer hover:text-pink-500 transition" />
         </Link>
       </div>
+
       <div className="md:hidden flex items-center">
         <button onClick={toggleMenu}>
           {isOpen ? (
@@ -94,8 +95,12 @@ const Nav = () => {
             Contact Us
           </Link>
           <div className="flex gap-4">
+          <Link href="/cart">
             <MdOutlineShoppingBag className="text-2xl text-black cursor-pointer hover:text-pink-500 transition" />
+            </Link>
+            <Link href="/account">
             <RiAccountCircleLine className="text-2xl text-black cursor-pointer hover:text-pink-500 transition" />
+            </Link>
           </div>
         </div>
       )}

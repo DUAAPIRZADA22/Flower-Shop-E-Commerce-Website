@@ -1,6 +1,7 @@
 "use client";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation"; 
 
 interface Product {
   id: number;
@@ -12,6 +13,7 @@ interface Product {
 
 const Page = ({ params }: { params: { id: string } }) => {
   const [product, setProduct] = useState<Product>();
+  const router = useRouter(); 
 
   useEffect(() => {
     const getData = async () => {
@@ -33,6 +35,10 @@ const Page = ({ params }: { params: { id: string } }) => {
       const myProducts: Product = product!;
       cartArray.push(myProducts);
       localStorage.setItem("cartData", JSON.stringify(cartArray));
+
+      console.log("Cart Updated:", cartArray); 
+
+      router.push("/cart");
     }
   };
 
@@ -58,7 +64,7 @@ const Page = ({ params }: { params: { id: string } }) => {
         </p>
         <button
           onClick={addToCart}
-          className="bg-blue-500 text-white px-4 sm:px-5 md:px-6 py-2 rounded hover:bg-blue-600"
+          className="bg-pink-300 text-black font-bold  px-4 sm:px-5 md:px-6 py-2 rounded hover:bg-orange-300"
         >
           Add to Cart
         </button>
@@ -69,6 +75,7 @@ const Page = ({ params }: { params: { id: string } }) => {
 };
 
 export default Page;
+
 
 
 

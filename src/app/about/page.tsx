@@ -9,7 +9,7 @@ const page = () => {
             "Flowers are not just a display of beauty; they are a silent
             language of emotions. Each bloom speaks a different story, carrying
             whispers of love, friendship, and joy. They connect us to nature,
-            bring peace to our hearts, and remind us of life's fleeting,
+            bring peace to our hearts, and remind us of life&apos;s fleeting,
             delicate moments."
           </blockquote>
           <hr className="border-gray-400 w-1/4 mt-2" />
@@ -32,11 +32,11 @@ const page = () => {
           BETTER FLOWERS. LOWER PRICES !
         </h1>
         <h2 className="text-2xl font-semibold font-dancing py-4">
-          Put A smile On Their Face And Show That You Care
+          Put A Smile On Their Face And Show That You Care
         </h2>
         <p className="mt-4 text-gray-700 mb-12">
           Welcome to our flower shop, where every petal tells a story. We bring
-          nature’s beauty to your doorstep with a variety of flowers for every
+          nature&apos;s beauty to your doorstep with a variety of flowers for every
           occasion.
         </p>
       </div>

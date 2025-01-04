@@ -19,7 +19,7 @@ const page = () => {
           <div className="flex flex-col items-center text-center mb-8">
             <FiMail className="text-3xl hover:text-pink-300 transition-colors" />
             <h3 className="text-3xl font-semibold mt-4 font-dancing">Email</h3>
-            <p className="text-gray-600 mt-2">example@domain.com</p>
+            <p className="text-gray-600 mt-2">example@gmail.com</p>
           </div>
           <div className="flex flex-col items-center text-center mb-8">
             <FiMapPin className="text-3xl hover:text-pink-300 transition-colors" />

@@ -37,7 +37,7 @@ const Products = () => {
         {products.map((product: Product) => (
           <div
             key={product.id}
-            className="border p-4 rounded-lg shadow-sm w-72 h-96 mx-auto flex flex-col items-center relative  transition-transform hover:scale-105 border-pink-600"
+            className="border p-4 rounded-lg shadow-sm w-72 h-[400px] mx-auto flex flex-col items-center relative  transition-transform hover:scale-105 border-pink-600"
           >
             <div className="relative w-full h-56 bg-slate-300">
               <img
@@ -45,21 +45,16 @@ const Products = () => {
                 alt={product.name}
                 className="w-full h-full object-cover rounded-md"
               />
-              <div className="absolute inset-0 flex justify-center items-end pb-2 space-x-4">
-                <Link href={`/products/${product.id}`}>
-                <span className="bg-white w-7 h-7 flex items-center justify-center rounded-full shadow-md">
-                  <FaLink className="text-black text-lg" />
-                </span>
-                </Link>
-                <span className="bg-white w-7 h-7 flex items-center justify-center rounded-full shadow-md">
-                  <FaHeart className="text-black text-lg" />
-                </span>
-              </div>
             </div>
             <h3 className="text-3xl font-bold font-dancing mb-2 py-2">
               {product.name}
             </h3>
             <p className="text-gray-700 text-lg mb-4">{product.price}</p>
+            <button className="text-black bg-pink-100 text-center py-2 px-4 rounded-lg mb-6">
+              <Link href={`/products/${product.id}`}>
+              View More
+              </Link>
+            </button>
           </div>
         ))}
       </div>

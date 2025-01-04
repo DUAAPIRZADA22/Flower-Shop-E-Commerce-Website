@@ -2,23 +2,25 @@ import React from "react";
 
 const Collections = () => {
   const collections = [
-      {
-        id: 1,
-        title: "Choose Flowers",
-        description: "Browse through our wide selection of vibrant and fresh flowers.",
-      },
-      {
-        id: 2,
-        title: "Place An Order",
-        description: "Simply choose the quantity and delivery details, and we'll take care of the rest.",
-      },
-      {
-        id: 3,
-        title: "Get Plants Delivered",
-        description: "Enjoy the convenience of having your plants delivered directly to your doorstep.",
-      },
-    ];
-    
+    {
+      id: 1,
+      title: "Choose Flowers",
+      description:
+        "Browse through our wide selection of vibrant and fresh flowers.",
+    },
+    {
+      id: 2,
+      title: "Place An Order",
+      description:
+        "Simply choose the quantity and delivery details, and we'll take care of the rest.",
+    },
+    {
+      id: 3,
+      title: "Get Plants Delivered",
+      description:
+        "Enjoy the convenience of having your plants delivered directly to your doorstep.",
+    },
+  ];
 
   return (
     <div className="text-center py-24">
@@ -29,10 +31,10 @@ const Collections = () => {
         <br /> Beautifully share your emotions with our garden flowers.
       </p>
 
-      <div className="flex justify-center mt-8 px-6">
-        <div className="w-full md:w-1/2 h-[450px] bg-gray-300">
+      <div className="flex flex-col md:flex-row justify-center mt-8 px-6">
+        <div className="w-full md:w-1/2 h-[450px] bg-gray-300 mb-6 md:mb-0">
           <img
-            src="/images/f1.jpg"  
+            src="/images/f1.jpg"
             alt="Collection"
             className="w-full h-full object-cover"
           />
@@ -41,7 +43,9 @@ const Collections = () => {
         <div className="w-full md:w-1/2 text-left pl-8 py-12">
           {collections.map((collection) => (
             <div key={collection.id} className="mb-8">
-              <h1 className="font-bold text-3xl font-dancing cursor-pointer">{collection.title}</h1>
+              <h1 className="font-bold text-3xl font-dancing cursor-pointer">
+                {collection.title}
+              </h1>
               <p className="mt-2 text-gray-500">{collection.description}</p>
             </div>
           ))}
@@ -52,8 +56,3 @@ const Collections = () => {
 };
 
 export default Collections;
-
-
-
-
-
