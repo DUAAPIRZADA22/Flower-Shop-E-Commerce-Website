@@ -1,7 +1,8 @@
 "use client";
+
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/navigation"; 
+import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
 
 interface Product {
@@ -12,24 +13,23 @@ interface Product {
   img: string;
 }
 
-interface PageProps {
-  params: {
-    id: string;
-  };
-}
-
-const Page = ({ params }: PageProps) => {
+const Page = () => {
   const [product, setProduct] = useState<Product | null>(null);
-  const router = useRouter(); 
+  const params = useParams(); 
+  const router = useRouter();
 
   useEffect(() => {
     const getData = async () => {
-      const { data }: { data: Product[] } = (await axios.get("/api/product")).data;
-      const finalData = data.filter((val) => val.id.toString() === params.id)[0];
-      setProduct(finalData);
+      try {
+        const { data }: { data: Product[] } = (await axios.get("/api/product")).data;
+        const finalData = data.find((val) => val.id.toString() === params.id); 
+        setProduct(finalData || null);
+      } catch (error) {
+        console.error("Error fetching product data:", error);
+      }
     };
     getData();
-  }, [params.id]);  
+  }, [params.id]);
 
   const addToCart = () => {
     if (typeof window !== "undefined") {
@@ -43,7 +43,7 @@ const Page = ({ params }: PageProps) => {
         cartArray.push(product);
         localStorage.setItem("cartData", JSON.stringify(cartArray));
 
-        console.log("Cart Updated:", cartArray); 
+        console.log("Cart Updated:", cartArray);
 
         router.push("/cart");
       }
@@ -74,7 +74,7 @@ const Page = ({ params }: PageProps) => {
         </p>
         <button
           onClick={addToCart}
-          className="bg-pink-300 text-black font-bold  px-4 sm:px-5 md:px-6 py-2 rounded hover:bg-orange-300"
+          className="bg-pink-300 text-black font-bold px-4 sm:px-5 md:px-6 py-2 rounded hover:bg-orange-300"
         >
           Add to Cart
         </button>
@@ -85,6 +85,7 @@ const Page = ({ params }: PageProps) => {
 };
 
 export default Page;
+
 
 
 

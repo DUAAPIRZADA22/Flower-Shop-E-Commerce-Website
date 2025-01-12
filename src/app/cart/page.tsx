@@ -5,7 +5,6 @@ import React, { useEffect, useState } from "react";
 interface Product {
   id: number;
   name: string;
-  description: string;
   price: string;
   img: string;
 }
@@ -26,7 +25,6 @@ const Cart = () => {
     localStorage.setItem("cartData", JSON.stringify(updatedCart));
   };
 
-  
   const calculateTotal = () => {
     return cart.reduce((total, item) => {
       const priceAsNumber = parseFloat(item.price.replace(/[^0-9.-]+/g, ""));
@@ -43,7 +41,7 @@ const Cart = () => {
         cart.map((item, index) => (
           <div
             key={index}
-            className="flex flex-col items-center border p-4 rounded-md mb-4 shadow-md"
+            className="flex items-center border p-4 rounded-md mb-4 shadow-md"
           >
             <Image
               src={item.img}
@@ -52,14 +50,13 @@ const Cart = () => {
               alt={item.name}
               className="w-1/3 sm:w-1/5 rounded-md"
             />
-            <div className="text-center mt-4">
-              <h2 className="text-2xl font-dancing font-bold">{item.name}</h2>
-              <p>{item.description}</p>
+            <div className="text-center flex-grow mx-4">
+              <h2 className="text-3xl font-dancing font-bold">{item.name}</h2>
               <p className="font-semibold">Price: {item.price}</p>
             </div>
             <button
               onClick={() => removeFromCart(item.id)}
-              className="bg-pink-500 text-white font-bold px-4 py-2 rounded mt-4 hover:bg-black"
+              className="bg-pink-500 text-white font-bold px-4 py-2 rounded hover:bg-black"
             >
               Remove
             </button>
@@ -83,6 +80,7 @@ const Cart = () => {
 };
 
 export default Cart;
+
 
 
 
